@@ -50,12 +50,12 @@ public class Player : MonoBehaviour {
         if (currentTarget != null)
         {
 
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
             
-            //transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, 0.5f);
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, 0.5f);
 
 
-            rb.AddForce(currentTarget.transform.position - transform.position * 100);
+           
         
         }
         Destroy(currentTarget);
