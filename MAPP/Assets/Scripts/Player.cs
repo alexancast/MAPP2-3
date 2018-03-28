@@ -26,8 +26,9 @@ public class Player : MonoBehaviour {
         {
 
           
-             createGrapplingHookTarget();
-            
+
+                createGrapplingHookTarget();
+
 
            
         }
