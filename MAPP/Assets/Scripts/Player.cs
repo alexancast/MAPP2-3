@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
            
         
         }
-        Destroy(currentTarget);
+       
     }
 
 
