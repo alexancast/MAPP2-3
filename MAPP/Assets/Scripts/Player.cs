@@ -14,8 +14,14 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         checkMouseClick();
-        launchPlayerAgainstHook();
 
+        if (currentTarget != null)
+        {
+            if (currentTarget.transform.position != transform.position)
+            {
+                launchPlayerAgainstHook();
+            }
+        }
 	}
 
 
@@ -25,21 +31,23 @@ public class Player : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
 
+            Destroy(currentTarget);
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-           
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+
                 if (hit)
                 {
 
 
-                    
-                        Debug.Log(hit.collider.gameObject.name);
-                        createGrapplingHookTarget();
 
-                    
+                    Debug.Log(hit.collider.gameObject.name);
+                    createGrapplingHookTarget();
+
+
                 }
             }
+
 
     
     }
@@ -60,10 +68,13 @@ public class Player : MonoBehaviour {
         if (currentTarget != null)
         {
 
+          
 
-            
             transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, 0.5f);
 
+
+
+           
 
            
         
@@ -72,4 +83,20 @@ public class Player : MonoBehaviour {
     }
 
 
+	private void OnCollisionEnter(Collision other)
+	{
+
+
+
+            if(other.collider.CompareTag("Terrain")){
+
+                currentTarget = null;
+
+            }
+
+        }
+
 }
+
+
+

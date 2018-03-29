@@ -26,7 +26,7 @@ public class Rope : MonoBehaviour {
 	{
         if (collision.CompareTag("Player")){
 
-            Destroy(gameObject);
+
         }
 	}
 
