@@ -87,14 +87,10 @@ public class Player : MonoBehaviour {
 	{
 
 
+        Destroy(currentTarget);
+            
 
-            if(other.collider.CompareTag("Terrain")){
-
-                currentTarget = null;
-
-            }
-
-        }
+    }
 
 }
 
