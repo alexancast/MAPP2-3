@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212508296333775372}
   - component: {fileID: 114484857837865202}
   - component: {fileID: 50861837755902896}
-  - component: {fileID: 233901851963015710}
   - component: {fileID: 58930848305468754}
   m_Layer: 0
   m_Name: GrapplingHookPosition
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708392247244528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.62, y: -1.0482085, z: 0.23146611}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8111234, y: 1.8111236, z: 1.8111236}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0}
   speed: 1
+  amount: 1000
 --- !u!212 &212508296333775372
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -136,26 +136,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!233 &233901851963015710
-HingeJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708392247244528}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359

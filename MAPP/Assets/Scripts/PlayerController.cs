@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 
     public Vector2 playerpos;
 
+    public GameObject hook;
+
     private float hookSpeed = 3;
     private float distance = 0;
     private float pullSpeed = 1;
@@ -31,13 +33,26 @@ public class PlayerController : MonoBehaviour {
         // Throw hook on mouseButtonDown
 		if (Input.GetMouseButtonDown(0))
         {
-            ThrowGrapplingHook();
+            //ThrowGrapplingHook();
+            Instantiate(hook, transform.position, Quaternion.identity);
+            
+
         }
 
-        PullPlayerToHook();
+        //PullPlayerToHook();
 
+        
 
     }
+
+
+
+
+
+
+
+
+
 
     private void PullPlayerToHook()
     {
