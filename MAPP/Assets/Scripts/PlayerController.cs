@@ -33,6 +33,17 @@ public class PlayerController : MonoBehaviour {
         // Throw hook on mouseButtonDown
 		if (Input.GetMouseButtonDown(0))
         {
+			GameObject[] oldGrappleHooks;
+			oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
+
+			foreach(GameObject oldGrappleHook in oldGrappleHooks){
+
+				Destroy (oldGrappleHook);
+
+			}
+
+		
+
             //ThrowGrapplingHook();
             Instantiate(hook, transform.position, Quaternion.identity);
             
@@ -49,7 +60,10 @@ public class PlayerController : MonoBehaviour {
 
 
 
-
+	public void SetDistance()
+	{
+		joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
+	}
 
 
 
