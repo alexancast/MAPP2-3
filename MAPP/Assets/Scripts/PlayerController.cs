@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float pullSpeed = 1f;
 	
     private float minimumDistance = 1f;
+    private float maximumDistance = 50f;
     private float coolDown = 1f;
     private bool coolDownActive;
 
@@ -30,18 +31,15 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () {
         // Throw hook on mouseButtonDown
-		if (coolDownActive == false) {
+        
 
-            if (joint.distance < minimumDistance)
-            {
-                DestroyGrappleHooks();
-                DisableJoint();
-            }
+        if (coolDownActive == false) {
+            
 
             if (Input.GetMouseButtonDown (0)) {
                 EnableJoint();
 
-				joint.distance = 30;
+				joint.distance = 250;
 
                 DestroyGrappleHooks();
 
@@ -55,6 +53,32 @@ public class PlayerController : MonoBehaviour {
 
 			}
 		}
+
+
+        GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");
+
+        if (hooks != null)
+        {
+            if (hooks.GetComponent<Rope>().hooked)
+            {
+                Debug.Log("nej");
+                if (joint.distance < minimumDistance)
+                {
+                    DestroyGrappleHooks();
+                    DisableJoint();
+                    Debug.Log("sluta");
+                }
+            }
+            else
+            {
+                if (Vector2.Distance(hooks.transform.position, transform.position) > maximumDistance)
+                {
+                    //hooks.GetComponent<Rope>().ReelInHook();
+                    DestroyGrappleHooks();
+                    DisableJoint();
+                }
+            }
+        }
 
         PullPlayerToHook();
 

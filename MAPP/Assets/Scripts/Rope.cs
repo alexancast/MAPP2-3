@@ -14,6 +14,9 @@ public class Rope : MonoBehaviour {
 
     public GameObject player;
 
+    public bool hooked;
+    private float reelInSpeed = 5;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,6 +37,8 @@ public class Rope : MonoBehaviour {
 	{
         if (collision.CompareTag("Terrain")){
 
+            hooked = true;
+
 			rb.velocity = Vector3.zero;
 			rb.gravityScale = 0;
 		
@@ -41,9 +46,14 @@ public class Rope : MonoBehaviour {
 
 			player.GetComponent<PlayerController> ().SetDistance ();
 
-
+            Debug.Log("bool:" + hooked);
 
         }
 	}
+
+    public void ReelInHook()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target, reelInSpeed);
+    }
 
 }
