@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public Vector2 playerpos;
 
     public GameObject hook;
-	private float coolDown = 0.5f;
+	private float coolDown = 1f;
     public float pullSpeed = 1;
 	private bool coolDownActive;
 
@@ -34,14 +34,7 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				joint.distance = 30;
 
-				GameObject[] oldGrappleHooks;
-				oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
-
-				foreach (GameObject oldGrappleHook in oldGrappleHooks) {
-
-					Destroy (oldGrappleHook);
-
-				}
+				destroyGrappleHooks ();
 
 		
 
@@ -64,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 		if (coolDown <= 0) {
 
 			coolDownActive = false;
-			coolDown = 0.5f;
+			coolDown = 1f;
 
 		
 		}
@@ -95,4 +88,20 @@ public class PlayerController : MonoBehaviour {
         // Sets hook anchor position to mousePosition
         joint.connectedAnchor = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
     }
+
+
+	private void destroyGrappleHooks(){
+
+		GameObject[] oldGrappleHooks;
+		oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
+
+		foreach (GameObject oldGrappleHook in oldGrappleHooks) {
+
+			Destroy (oldGrappleHook);
+
+		}
+
+	}
+
+
 }
