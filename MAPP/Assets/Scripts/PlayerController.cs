@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public DistanceJoint2D joint;
-    public Vector2 v2;
-
     public Vector2 playerpos;
-
     public GameObject hook;
-	private float coolDown = 1f;
-    public float pullSpeed = 1;
-	private bool coolDownActive;
+	
+    public float pullSpeed = 1f;
+	
+    private float minimumDistance = 1f;
+    private float coolDown = 1f;
+    private bool coolDownActive;
 
-	void Start () {
+    void Start () {
         // Safetycheck, makes sure a reference to joint exists
         if (joint == null)
         {
@@ -31,10 +31,19 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         // Throw hook on mouseButtonDown
 		if (coolDownActive == false) {
-			if (Input.GetMouseButtonDown (0)) {
+
+            if (joint.distance < minimumDistance)
+            {
+                DestroyGrappleHooks();
+                DisableJoint();
+            }
+
+            if (Input.GetMouseButtonDown (0)) {
+                EnableJoint();
+
 				joint.distance = 30;
 
-				destroyGrappleHooks ();
+                DestroyGrappleHooks();
 
 		
 
@@ -74,7 +83,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 
+    private void DisableJoint()
+    {
+        joint.enabled = false;
+    }
 
+    private void EnableJoint()
+    {
+        joint.enabled = true;
+    }
 
     private void PullPlayerToHook()
     {
@@ -90,7 +107,7 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-	private void destroyGrappleHooks(){
+	private void DestroyGrappleHooks(){
 
 		GameObject[] oldGrappleHooks;
 		oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
