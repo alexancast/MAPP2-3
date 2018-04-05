@@ -969,6 +969,7 @@ MonoBehaviour:
   v2: {x: 0, y: 0}
   playerpos: {x: 0, y: 0}
   hook: {fileID: 1708392247244528, guid: dab33077832f74a6fb51ba23266fb287, type: 2}
+  coolDown: 0.5
   pullSpeed: 20
 --- !u!232 &1120455663
 DistanceJoint2D:

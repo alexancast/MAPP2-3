@@ -10,10 +10,9 @@ public class PlayerController : MonoBehaviour {
     public Vector2 playerpos;
 
     public GameObject hook;
-
-    private float hookSpeed = 3;
-    private float distance = 0;
+	private float coolDown = 0.5f;
     public float pullSpeed = 1;
+	private bool coolDownActive;
 
 	void Start () {
         // Safetycheck, makes sure a reference to joint exists
@@ -31,30 +30,44 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () {
         // Throw hook on mouseButtonDown
-		if (Input.GetMouseButtonDown(0))
-        {
-			joint.distance = 30;
+		if (coolDownActive == false) {
+			if (Input.GetMouseButtonDown (0)) {
+				joint.distance = 30;
 
-			GameObject[] oldGrappleHooks;
-			oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
+				GameObject[] oldGrappleHooks;
+				oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
 
-			foreach(GameObject oldGrappleHook in oldGrappleHooks){
+				foreach (GameObject oldGrappleHook in oldGrappleHooks) {
 
-				Destroy (oldGrappleHook);
+					Destroy (oldGrappleHook);
 
-			}
+				}
 
 		
 
-            //ThrowGrapplingHook();
-            Instantiate(hook, transform.position, Quaternion.identity);
+				//ThrowGrapplingHook();
+				Instantiate (hook, transform.position, Quaternion.identity);
             
+				coolDownActive = true;
 
-        }
+
+			}
+		}
 
         PullPlayerToHook();
 
-        
+
+		if (coolDownActive == true) {
+			coolDown -= Time.deltaTime;
+		}
+
+		if (coolDown <= 0) {
+
+			coolDownActive = false;
+			coolDown = 0.5f;
+
+		
+		}
 
     }
 
