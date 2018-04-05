@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 
     private float hookSpeed = 3;
     private float distance = 0;
-    private float pullSpeed = 1;
+    public float pullSpeed = 1;
 
 	void Start () {
         // Safetycheck, makes sure a reference to joint exists
@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour {
         // Throw hook on mouseButtonDown
 		if (Input.GetMouseButtonDown(0))
         {
+			joint.distance = 30;
+
 			GameObject[] oldGrappleHooks;
 			oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
 
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        //PullPlayerToHook();
+        PullPlayerToHook();
 
         
 

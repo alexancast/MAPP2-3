@@ -969,6 +969,7 @@ MonoBehaviour:
   v2: {x: 0, y: 0}
   playerpos: {x: 0, y: 0}
   hook: {fileID: 1708392247244528, guid: dab33077832f74a6fb51ba23266fb287, type: 2}
+  pullSpeed: 20
 --- !u!232 &1120455663
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -985,8 +986,8 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0.2}
   m_ConnectedAnchor: {x: 0, y: 2}
   m_AutoConfigureDistance: 0
-  m_Distance: 500
-  m_MaxDistanceOnly: 0
+  m_Distance: 50
+  m_MaxDistanceOnly: 1
 --- !u!61 &1120455664
 BoxCollider2D:
   m_ObjectHideFlags: 0

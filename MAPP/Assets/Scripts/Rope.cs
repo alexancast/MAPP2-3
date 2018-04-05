@@ -34,7 +34,14 @@ public class Rope : MonoBehaviour {
 	{
         if (collision.CompareTag("Terrain")){
 
+			rb.velocity = Vector3.zero;
+			rb.gravityScale = 0;
+		
+
+
 			player.GetComponent<PlayerController> ().SetDistance ();
+
+
 
         }
 	}
