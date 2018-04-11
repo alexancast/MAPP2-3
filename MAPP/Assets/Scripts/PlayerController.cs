@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public Rigidbody2D rigidbody2d;
     public DistanceJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
@@ -12,14 +13,20 @@ public class PlayerController : MonoBehaviour {
 	
     private float minimumDistance = 1f;
     private float maximumDistance = 50f;
-    private float coolDown = 1f;
-    private bool coolDownActive;
+
+    public float thrust;
+    private Vector2 velocity;
 
     void Start () {
         // Safetycheck, makes sure a reference to joint exists
         if (joint == null)
         {
             joint = this.GetComponent<DistanceJoint2D>();
+        }
+
+        if (rigidbody2d == null)
+        {
+            rigidbody2d = this.GetComponent<Rigidbody2D>();
         }
 
         // Resets joint.distance
@@ -31,12 +38,12 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () {
         // Throw hook on mouseButtonDown
-        
+        velocity = rigidbody2d.velocity;
 
-        if (coolDownActive == false) {
-            
 
-            if (Input.GetMouseButtonDown (0)) {
+        if (Input.GetMouseButtonDown(0)) {
+
+            if (joint.enabled == false) {
                 EnableJoint();
 
 				joint.distance = 250;
@@ -47,12 +54,18 @@ public class PlayerController : MonoBehaviour {
 
 				//ThrowGrapplingHook();
 				Instantiate (hook, transform.position, Quaternion.identity);
-            
-				coolDownActive = true;
 
 
-			}
-		}
+
+            }
+            else
+            {
+                DestroyGrappleHooks();
+                DisableJoint();
+                Debug.Log("disabled");
+                //rigidbody2d.velocity = velocity;
+            }
+        }
 
 
         GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");
@@ -61,7 +74,6 @@ public class PlayerController : MonoBehaviour {
         {
             if (hooks.GetComponent<Rope>().hooked)
             {
-                Debug.Log("nej");
                 if (joint.distance < minimumDistance)
                 {
                     DestroyGrappleHooks();
@@ -82,26 +94,15 @@ public class PlayerController : MonoBehaviour {
 
         PullPlayerToHook();
 
-
-		if (coolDownActive == true) {
-			coolDown -= Time.deltaTime;
-		}
-
-		if (coolDown <= 0) {
-
-			coolDownActive = false;
-			coolDown = 1f;
-
-		
-		}
-
     }
 
+    void FixedUpdate()
+    {
+        rigidbody2d.AddForce(rigidbody2d.GetRelativePointVelocity(transform.position) * thrust);
+        //rigidbody2d.AddRelativeForce(rigidbody2d.GetRelativePointVelocity(transform.position) * thrust);
+    }
 
-
-
-
-	public void SetDistance()
+    public void SetDistance()
 	{
 		joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
 	}
