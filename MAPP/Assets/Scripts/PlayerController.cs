@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public Rigidbody2D rigidbody2d;
-    public DistanceJoint2D joint;
+    public SpringJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
 	
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
         // Safetycheck, makes sure a reference to joint exists
         if (joint == null)
         {
-            joint = this.GetComponent<DistanceJoint2D>();
+            joint = this.GetComponent<SpringJoint2D>();
         }
 
         if (rigidbody2d == null)
@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
 
             if (joint.enabled == false) {
-                EnableJoint();
 
 				joint.distance = 250;
 
@@ -113,7 +112,7 @@ public class PlayerController : MonoBehaviour {
         joint.enabled = false;
     }
 
-    private void EnableJoint()
+    public void EnableJoint()
     {
         joint.enabled = true;
     }

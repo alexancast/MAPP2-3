@@ -37,6 +37,8 @@ public class Rope : MonoBehaviour {
 	{
         if (collision.CompareTag("Terrain")){
 
+            player.GetComponent<PlayerController>().EnableJoint();
+
             hooked = true;
 
 			rb.velocity = Vector3.zero;

@@ -907,8 +907,7 @@ GameObject:
   - component: {fileID: 1120455660}
   - component: {fileID: 1120455659}
   - component: {fileID: 1120455662}
-  - component: {fileID: 1120455663}
-  - component: {fileID: 1120455664}
+  - component: {fileID: 1120455665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -977,13 +976,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 0}
-  joint: {fileID: 1120455663}
+  joint: {fileID: 1120455665}
   playerpos: {x: 0, y: 0}
   hook: {fileID: 1708392247244528, guid: dab33077832f74a6fb51ba23266fb287, type: 2}
   pullSpeed: 20
   thrust: 1
---- !u!232 &1120455663
-DistanceJoint2D:
+--- !u!231 &1120455665
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -995,36 +994,12 @@ DistanceJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0.2}
-  m_ConnectedAnchor: {x: 0, y: 2}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 50
-  m_MaxDistanceOnly: 1
---- !u!61 &1120455664
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1120455658}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0401358, y: -0.10034037}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8027202, y: 1.8428564}
-  m_EdgeRadius: 0
+  m_Distance: 5
+  m_DampingRatio: 0.2
+  m_Frequency: 0.5
 --- !u!1 &1763651357
 GameObject:
   m_ObjectHideFlags: 0
