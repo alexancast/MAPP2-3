@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour {
 	
     public float pullSpeed = 1f;
 	
-    private float minimumDistance = 1f;
-    private float maximumDistance = 50f;
+    public float minimumDistance = 1f;
+    public float maximumDistance = 50f;
 
     public float thrust;
     private Vector2 velocity;
