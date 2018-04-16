@@ -48,8 +48,6 @@ public class Rope : MonoBehaviour {
 
 			player.GetComponent<PlayerController> ().SetDistance ();
 
-            Debug.Log("bool:" + hooked);
-
         }
 	}
 

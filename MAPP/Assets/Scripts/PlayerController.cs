@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour {
     public SpringJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
-	
+
+    public float jumpHeight;
     public float pullSpeed = 1f;
-	
+
+    public float kickBackDistance = 2f;
+
     public float minimumDistance = 1f;
     public float maximumDistance = 50f;
 
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0)) {
 
-            if (joint.enabled == false) {
+            if (!joint.enabled) {
 
 				joint.distance = 250;
 
@@ -61,8 +64,8 @@ public class PlayerController : MonoBehaviour {
             {
                 DestroyGrappleHooks();
                 DisableJoint();
-                Debug.Log("disabled");
-                //rigidbody2d.velocity = velocity;
+
+                rigidbody2d.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
             }
         }
 
@@ -77,7 +80,6 @@ public class PlayerController : MonoBehaviour {
                 {
                     DestroyGrappleHooks();
                     DisableJoint();
-                    Debug.Log("sluta");
                 }
             }
             else
@@ -103,7 +105,14 @@ public class PlayerController : MonoBehaviour {
 
     public void SetDistance()
 	{
-		joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
+        if (Vector2.Distance(joint.connectedAnchor, transform.position) > kickBackDistance)
+        {
+            joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
+        } else
+        {
+            joint.distance = kickBackDistance;
+        }
+
 	}
 
 
