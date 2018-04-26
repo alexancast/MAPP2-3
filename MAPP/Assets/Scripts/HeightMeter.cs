@@ -9,6 +9,8 @@ public class HeightMeter : MonoBehaviour {
     public float heightConverter;
     public float heightOffset;
 
+    public float heightRecord;
+
     private GameObject player;
 
 	void Start () {
@@ -20,5 +22,12 @@ public class HeightMeter : MonoBehaviour {
         float height = player.transform.position.y;
         height = (int)height * heightConverter - heightOffset;
         text.text = height.ToString() + "m";
+
+        if(heightRecord < height)
+        {
+            heightRecord = height;
+            PlayerPrefs.SetInt("HighScore", (int)heightRecord);
+        }
+        
 	}
 }

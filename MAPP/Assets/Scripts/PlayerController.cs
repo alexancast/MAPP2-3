@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour {
     public float maximumDistance = 50f;
 
     public float thrust;
-    private Vector2 velocity;
 
 	private AudioSource audioSource;
 	public AudioClip collideSound;
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour {
         // Resets joint.distance
         joint.distance = 0;
 
-
+        transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
 
     }
 	
@@ -54,7 +53,6 @@ public class PlayerController : MonoBehaviour {
 
 
         // Throw hook on mouseButtonDown
-        velocity = rigidbody2d.velocity;
 
 
         if (Input.GetMouseButtonDown(0)) {
