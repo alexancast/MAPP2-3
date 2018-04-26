@@ -1,6 +1,6 @@
-WindowsStandalone
+Android
 PlayerPath?
-D:/Unity/MAPP2-3/Build v1.8.exe
+C:/Users/arbuz/Desktop/Project Drawing_a_blank.apk
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Main.unity
