@@ -6,9 +6,53 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour {
 
 
+	private AudioSource audioSource;
+	public AudioClip clickSound;
+
+	public float timer = 0.2f;
+	private bool timerActive = false;
+	private bool startGame;
+	private bool loadCredits;
+	private bool loadMenu;
+
+	void Start(){
+
+		audioSource = GetComponent<AudioSource> ();
+
+	}
+
+
+	void Update(){
+	
+		if (timerActive) {
+
+			timer -= Time.deltaTime;
+			
+		}
+
+
+		if (timer <= 0 && startGame) {
+
+			SceneManager.LoadScene ("Main", LoadSceneMode.Single);
+		} else if (timer <= 0 && loadCredits) {
+
+			SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+		
+		}else if(timer <= 0 && loadMenu){
+
+			SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+
+		}
+	
+	}
+
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+		timerActive = true;
+		audioSource.PlayOneShot (clickSound, 1f);
+		startGame = true;
+       
     }
 
     public void ExitGame()
@@ -18,11 +62,23 @@ public class Menu : MonoBehaviour {
 
     public void LoadCredits()
     {
-        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+		timerActive = true;
+		audioSource.PlayOneShot (clickSound, 1f);
+		loadCredits = true;
+        
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+		timerActive = true;
+		audioSource.PlayOneShot (clickSound, 1f);
+		loadMenu = true;
+        
     }
+
+
+
+
+
+
 }

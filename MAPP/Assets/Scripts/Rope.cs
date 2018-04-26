@@ -17,8 +17,13 @@ public class Rope : MonoBehaviour {
     public bool hooked;
     private float reelInSpeed = 5;
 
+	public AudioClip collisionSound;
+	private AudioSource audioSource;
+
     private void Start()
     {
+		audioSource = GetComponent<AudioSource> ();
+
         player = GameObject.FindGameObjectWithTag("Player");
 
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +42,8 @@ public class Rope : MonoBehaviour {
 	{
         if (collision.CompareTag("Terrain")){
 
+			audioSource.PlayOneShot (collisionSound, 1f);
+
             player.GetComponent<PlayerController>().EnableJoint();
 
             hooked = true;
@@ -54,6 +61,7 @@ public class Rope : MonoBehaviour {
     public void ReelInHook()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, reelInSpeed);
+
     }
 
 }

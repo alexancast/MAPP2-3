@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Vector2 playerpos;
     public GameObject hook;
 
+
     public float jumpHeight;
     public float pullSpeed = 1f;
 
@@ -20,7 +21,17 @@ public class PlayerController : MonoBehaviour {
     public float thrust;
     private Vector2 velocity;
 
+	private AudioSource audioSource;
+	public AudioClip collideSound;
+	public AudioClip missSound;
+	public AudioClip jumpSound;
+
+
+
     void Start () {
+
+		audioSource = GetComponent<AudioSource> ();
+
         // Safetycheck, makes sure a reference to joint exists
         if (joint == null)
         {
@@ -40,6 +51,8 @@ public class PlayerController : MonoBehaviour {
     }
 	
 	void Update () {
+
+
         // Throw hook on mouseButtonDown
         velocity = rigidbody2d.velocity;
 
@@ -89,11 +102,13 @@ public class PlayerController : MonoBehaviour {
                     //hooks.GetComponent<Rope>().ReelInHook();
                     DestroyGrappleHooks();
                     DisableJoint();
+					audioSource.PlayOneShot (missSound);
                 }
             }
         }
 
         PullPlayerToHook();
+
 
     }
 
@@ -108,9 +123,11 @@ public class PlayerController : MonoBehaviour {
         if (Vector2.Distance(joint.connectedAnchor, transform.position) > kickBackDistance)
         {
             joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
+
         } else
         {
             joint.distance = kickBackDistance;
+			audioSource.PlayOneShot (jumpSound, 0.5f);
         }
 
 	}
@@ -131,6 +148,7 @@ public class PlayerController : MonoBehaviour {
         // Reduces joint.distance over time
         // Meant to pull the player towards the hook
         joint.distance -= pullSpeed * Time.deltaTime;
+
     }
 
     private void ThrowGrapplingHook()
@@ -152,6 +170,14 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+
+
+	public void OnCollisionEnter2D(Collision2D other){
+	
+		audioSource.PlayOneShot (collideSound, 1f);
+
+	}
+
 
 
 }
