@@ -5,7 +5,10 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rope: {fileID: 1642119416711514, guid: 7ba31e8aef43e423795c1f0fa909c980, type: 2}
+  - player: {instanceID: 0}
+  - collisionSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

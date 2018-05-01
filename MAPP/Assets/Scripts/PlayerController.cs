@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     public SpringJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
-
+	public GameObject ropeSprite;
 
     public float jumpHeight;
     public float pullSpeed = 1f;
@@ -160,6 +160,9 @@ public class PlayerController : MonoBehaviour {
 
 		GameObject[] oldGrappleHooks;
 		oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
+
+		GameObject oldLine = GameObject.Find ("Line");
+		Destroy (oldLine);
 
 		foreach (GameObject oldGrappleHook in oldGrappleHooks) {
 

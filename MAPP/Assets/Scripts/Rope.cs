@@ -35,6 +35,25 @@ public class Rope : MonoBehaviour {
 
     private void Update()
     {
+
+		GameObject oldLine;
+		oldLine = GameObject.Find ("Line");
+
+		Destroy (oldLine);
+
+		var go = new GameObject ("Line");
+		var lr = go.AddComponent<LineRenderer> ();
+		lr.SetWidth (0.2f, 0.2f);
+
+		lr.material = new Material(Shader.Find("Standard"));
+
+		lr.SetColors (Color.blue, Color.blue);
+
+	
+		lr.SetPosition (0, player.transform.position);
+		lr.SetPosition (1, GameObject.FindGameObjectWithTag ("GrappleHook").transform.position);
+
+
         player.GetComponent<PlayerController>().joint.connectedAnchor = new Vector2(transform.position.x, transform.position.y);
     }
 
