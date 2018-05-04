@@ -43,17 +43,11 @@ public class Rope : MonoBehaviour {
 
 		var go = new GameObject ("Line");
 		var lr = go.AddComponent<LineRenderer> ();
-
-
-		lr.startWidth = 0.2f;
-		lr.endWidth = 0.2f;
-
-
+		lr.SetWidth (0.2f, 0.2f);
 
 		lr.material = new Material(Shader.Find("Standard"));
 
-		lr.startColor = Color.blue;
-		lr.endColor = Color.blue;
+		lr.SetColors (Color.blue, Color.blue);
 
 	
 		lr.SetPosition (0, player.transform.position);
