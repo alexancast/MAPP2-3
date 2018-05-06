@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject player;
+    public Transform target;
 
-    private Vector3 offset;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
 
-    void Start()
+    void FixedUpdate()
     {
-        // Initilizes position
-        offset = transform.position - player.transform.position;
-    }
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
 
-    void LateUpdate()
-    {
-        // Camera follows player position, LateUpdate makes it rather smooth
-        transform.position = player.transform.position + offset;
+        //transform.LookAt(target);
     }
 }
