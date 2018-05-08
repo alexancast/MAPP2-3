@@ -186,8 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0}
-  speed: 5
-  amount: 1000
+  speed: 1500
   player: {fileID: 0}
   hooked: 0
   collisionSound: {fileID: 8300000, guid: 8722aed9ef8694d04a3ac6ab9a1d4c99, type: 3}

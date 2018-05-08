@@ -8,7 +8,6 @@ public class Rope : MonoBehaviour {
     public float speed = 1;
 
     private Rigidbody2D rb;
-    public float amount = 10;
 
     private Vector3 sp;
 
@@ -30,7 +29,7 @@ public class Rope : MonoBehaviour {
 
         sp = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 dir = (Input.mousePosition - sp).normalized;
-        rb.AddForce(dir * amount);
+        rb.AddForce(dir * speed);
     }
 
     private void Update()
