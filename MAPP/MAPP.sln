@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPP", "MAPP.csproj", "{F6F94E54-8B7D-3870-9D91-18A698B219C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPP.Plugins", "MAPP.Plugins.csproj", "{6E41F455-726E-A078-49F7-06A357FABDB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPP.Editor", "MAPP.Editor.csproj", "{ED15D230-348B-0169-602D-9551B2351727}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPP.Editor", "MAPP.Editor.csproj", "{ED15D230-348B-0169-602D-9551B2351727}"
 EndProject
@@ -19,10 +17,10 @@ Global
 		{F6F94E54-8B7D-3870-9D91-18A698B219C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F94E54-8B7D-3870-9D91-18A698B219C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F94E54-8B7D-3870-9D91-18A698B219C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E41F455-726E-A078-49F7-06A357FABDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E41F455-726E-A078-49F7-06A357FABDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E41F455-726E-A078-49F7-06A357FABDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E41F455-726E-A078-49F7-06A357FABDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED15D230-348B-0169-602D-9551B2351727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED15D230-348B-0169-602D-9551B2351727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED15D230-348B-0169-602D-9551B2351727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED15D230-348B-0169-602D-9551B2351727}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED15D230-348B-0169-602D-9551B2351727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED15D230-348B-0169-602D-9551B2351727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED15D230-348B-0169-602D-9551B2351727}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,8 +28,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {117C85FC-8236-40F5-801D-2CD6FE610824}
 	EndGlobalSection
 EndGlobal

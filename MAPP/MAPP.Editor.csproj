@@ -342,10 +342,6 @@
       <Project>{F6F94E54-8B7D-3870-9D91-18A698B219C0}</Project>
       <Name>MAPP</Name>
     </ProjectReference>
-    <ProjectReference Include="MAPP.Plugins.csproj">
-      <Project>{6E41F455-726E-A078-49F7-06A357FABDB2}</Project>
-      <Name>MAPP.Plugins</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C:\Users\arbuz\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.standardevents@1.0.13\Editor\Importer.cs" />
