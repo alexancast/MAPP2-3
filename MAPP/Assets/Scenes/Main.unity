@@ -3850,8 +3850,8 @@ MonoBehaviour:
   minimumDistance: 0.1
   maximumDistance: 10
   thrust: 1
-  collideSound: {fileID: 8300000, guid: 36a070a5d53d2400fa58633efbbe4bfd, type: 3}
-  missSound: {fileID: 8300000, guid: 8c599870473ed4bf1b14ae07a08368bb, type: 3}
+  collideSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
+  missSound: {fileID: 8300000, guid: 1418c6f9e24cfd144b23248c4fb70fc2, type: 3}
   jumpSound: {fileID: 8300000, guid: deef5f7f06cdd4b9bb97dc466ece2ae9, type: 3}
 --- !u!82 &1120455663
 AudioSource:

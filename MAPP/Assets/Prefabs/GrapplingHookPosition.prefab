@@ -88,10 +88,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 102de6616a9894f5d8a04e7227070dd6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cf53fd05d03b2824cb2f1a1c681f7044, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.75
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   speed: 1500
   player: {fileID: 0}
   hooked: 0
-  collisionSound: {fileID: 8300000, guid: 8722aed9ef8694d04a3ac6ab9a1d4c99, type: 3}
+  collisionSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
 --- !u!212 &212508296333775372
 SpriteRenderer:
   m_ObjectHideFlags: 1
