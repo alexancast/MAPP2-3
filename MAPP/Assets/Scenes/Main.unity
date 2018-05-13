@@ -3100,6 +3100,111 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224805135032983576, guid: dddf11f69fdbabc4591392e449c06b0d,
     type: 2}
   m_PrefabInternal: {fileID: 894653504}
+--- !u!1 &903214465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 903214466}
+  - component: {fileID: 903214468}
+  - component: {fileID: 903214467}
+  - component: {fileID: 903214469}
+  - component: {fileID: 903214470}
+  m_Layer: 5
+  m_Name: CountdownText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &903214466
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903214465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1062964805}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 500, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &903214467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903214465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 200
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 3
+--- !u!222 &903214468
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903214465}
+--- !u!95 &903214469
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903214465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d290d8d10ec1d345bc58597f57babd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &903214470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903214465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05524914b23e2544d9698d6f75d030a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986367657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,7 +3700,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3635,6 +3740,7 @@ RectTransform:
   - {fileID: 894653505}
   - {fileID: 667750800}
   - {fileID: 2135667643}
+  - {fileID: 903214466}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3844,7 +3950,7 @@ MonoBehaviour:
   playerpos: {x: 0, y: 0}
   hook: {fileID: 1708392247244528, guid: dab33077832f74a6fb51ba23266fb287, type: 2}
   ropeSprite: {fileID: 0}
-  jumpHeight: 500
+  jumpHeight: 400
   pullSpeed: 20
   kickBackDistance: 5
   minimumDistance: 0.1
@@ -3853,6 +3959,8 @@ MonoBehaviour:
   collideSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
   missSound: {fileID: 8300000, guid: 1418c6f9e24cfd144b23248c4fb70fc2, type: 3}
   jumpSound: {fileID: 8300000, guid: deef5f7f06cdd4b9bb97dc466ece2ae9, type: 3}
+  countdownTime: 3
+  countdownDone: 0
 --- !u!82 &1120455663
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3977,7 +4085,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 5
   m_DampingRatio: 1
-  m_Frequency: 1.4
+  m_Frequency: 1.3
 --- !u!1 &1133009020
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip missSound;
 	public AudioClip jumpSound;
 
-
+    public float countdownTime = 3.0f;
+    public bool countdownDone;
 
     void Start () {
 
@@ -46,15 +47,17 @@ public class PlayerController : MonoBehaviour {
         joint.distance = 0;
 
         transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
-
+        StartCoroutine("Countdown");
     }
 	
 	void Update () {
 
+        if (!countdownDone)
+        {
+            transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
+        }
 
         // Throw hook on mouseButtonDown
-
-
         if (Input.GetMouseButtonDown(0)) {
 
             if (!joint.enabled) {
@@ -63,9 +66,7 @@ public class PlayerController : MonoBehaviour {
 
                 DestroyGrappleHooks();
 
-		
-
-				//ThrowGrapplingHook();
+	
 				Instantiate (hook, transform.position, Quaternion.identity);
 
 
@@ -97,7 +98,6 @@ public class PlayerController : MonoBehaviour {
             {
                 if (Vector2.Distance(hooks.transform.position, transform.position) > maximumDistance)
                 {
-                    //hooks.GetComponent<Rope>().ReelInHook();
                     DestroyGrappleHooks();
                     DisableJoint();
 					audioSource.PlayOneShot (missSound);
@@ -113,7 +113,6 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         rigidbody2d.AddForce(rigidbody2d.GetRelativePointVelocity(transform.position) * thrust);
-        //rigidbody2d.AddRelativeForce(rigidbody2d.GetRelativePointVelocity(transform.position) * thrust);
     }
 
     public void SetDistance()
@@ -149,13 +148,6 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    private void ThrowGrapplingHook()
-    {
-        // Sets hook anchor position to mousePosition
-        joint.connectedAnchor = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
-    }
-
-
 	private void DestroyGrappleHooks(){
 
 		GameObject[] oldGrappleHooks;
@@ -179,6 +171,11 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-
+    IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(countdownTime);
+        countdownDone = true;
+        rigidbody2d.velocity = new Vector2(PlayerPrefs.GetFloat("xVel"), PlayerPrefs.GetFloat("yVel"));
+    }
 
 }
