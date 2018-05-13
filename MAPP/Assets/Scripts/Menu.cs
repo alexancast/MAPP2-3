@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
+    public GameObject menuPanel;
+    public GameObject settingsPanel;
+    public GameObject creditsPanel;
 
 	private AudioSource audioSource;
 	public AudioClip clickSound;
@@ -12,36 +15,42 @@ public class Menu : MonoBehaviour {
 	public float timer = 0.2f;
 	private bool timerActive = false;
 	private bool startGame;
-	private bool loadCredits;
-	private bool loadMenu;
 
-	void Start(){
+    private bool menuIsOpen;
+    private bool settingsIsOpen;
+    private bool creditsIsOpen;
+
+    void Start(){
 
 		audioSource = GetComponent<AudioSource> ();
 
+        ClosePanels();
+        OpenMenu();
 	}
 
 
 	void Update(){
-	
-		if (timerActive) {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menuIsOpen)
+            {
+                ExitGame();
+            } else if (settingsIsOpen)
+            {
+                OpenMenu();
+            } else if (creditsIsOpen)
+            {
+                OpenMenu();
+            }
+        }
+
+		if (timerActive) {
 			timer -= Time.deltaTime;
-			
 		}
 
-
 		if (timer <= 0 && startGame) {
-
 			SceneManager.LoadScene ("Main", LoadSceneMode.Single);
-		} else if (timer <= 0 && loadCredits) {
-
-			SceneManager.LoadScene("Credits", LoadSceneMode.Single);
-		
-		}else if(timer <= 0 && loadMenu){
-
-			SceneManager.LoadScene("Menu", LoadSceneMode.Single);
-
 		}
 	
 	}
@@ -60,25 +69,45 @@ public class Menu : MonoBehaviour {
         Application.Quit();
     }
 
-    public void LoadCredits()
+    public void OpenMenu()
     {
-		timerActive = true;
-		audioSource.PlayOneShot (clickSound, 1f);
-		loadCredits = true;
-        
+        ClosePanels();
+        audioSource.PlayOneShot(clickSound, 1f);
+        menuPanel.SetActive(true);
+        menuIsOpen = true;
     }
 
-    public void LoadMenu()
+    public void OpenSettings()
     {
-		timerActive = true;
-		audioSource.PlayOneShot (clickSound, 1f);
-		loadMenu = true;
-        
+        ClosePanels();
+        audioSource.PlayOneShot(clickSound, 1f);
+        settingsPanel.SetActive(true);
+        settingsIsOpen = true;
+
     }
 
+    public void OpenCredits()
+    {
+        ClosePanels();
+        audioSource.PlayOneShot(clickSound, 1f);
+        creditsPanel.SetActive(true);
+        creditsIsOpen = true;
+    }
 
+    private void ClosePanels()
+    {
+        menuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        menuIsOpen = false;
+        settingsIsOpen = false;
+        creditsIsOpen = false;
+    }
 
-
+    public void ClickSound()
+    {
+        audioSource.PlayOneShot(clickSound, 1f);
+    }
 
 
 }
