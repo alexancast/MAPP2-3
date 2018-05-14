@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour {
 
+	public Material repMaterial;
+
     public Vector2 target;
     public float speed = 1;
 
@@ -35,6 +37,9 @@ public class Rope : MonoBehaviour {
     private void Update()
     {
 
+
+		float distance = Vector3.Distance (transform.position, player.transform.position);
+
 		GameObject oldLine;
 		oldLine = GameObject.Find ("Line");
 
@@ -42,18 +47,22 @@ public class Rope : MonoBehaviour {
 
 		var go = new GameObject ("Line");
 		var lr = go.AddComponent<LineRenderer> ();
-		lr.startWidth = 0.2f;
-		lr.endWidth = 0.2f;
 
-		lr.material = new Material(Shader.Find("Sprites/Default"));
 
-		lr.startColor = Color.black;
-		lr.endColor = Color.black;
+
+		lr.startWidth = 0.3f;
+		lr.endWidth = 0.3f;
+
+
+		lr.material = repMaterial;
+
 
 	
 		lr.SetPosition (0, player.transform.position);
 		lr.SetPosition (1, GameObject.FindGameObjectWithTag ("GrappleHook").transform.position);
 
+
+		lr.material.mainTextureScale = new Vector2 (distance,1);
 
         player.GetComponent<PlayerController>().joint.connectedAnchor = new Vector2(transform.position.x, transform.position.y);
     }
