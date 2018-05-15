@@ -1,23 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour {
 
-    public Image circle;
-    public Image arrow;
+    public GameObject circle;
+    public GameObject arrow;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        circle.gameObject.SetActive(true);
-        arrow.gameObject.SetActive(true);
+        circle.SetActive(true);
+        arrow.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        circle.gameObject.SetActive(false);
-        arrow.gameObject.SetActive(false);
+        circle.SetActive(false);
+        arrow.SetActive(false);
     }
 
 }
