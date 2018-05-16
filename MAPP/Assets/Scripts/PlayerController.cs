@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour {
     public float countdownTime = 3.0f;
     public bool countdownDone;
 
+    public ParticleSystem particle1;
+    public ParticleSystem particle2;
+    public float fireRate = 0.8F;
+    public float nextFire = 0.0F;
+    public Vector3 particlePos;
+
     void Start () {
 
 		audioSource = GetComponent<AudioSource> ();
@@ -60,6 +66,12 @@ public class PlayerController : MonoBehaviour {
         // Throw hook on mouseButtonDown
         if (Input.GetMouseButtonDown(0)) {
 
+            if (Time.time > nextFire)
+            {
+                particle1.Play();
+                nextFire = Time.time + fireRate;
+            }
+
             if (!joint.enabled) {
 
 				joint.distance = 250;
@@ -88,6 +100,9 @@ public class PlayerController : MonoBehaviour {
         {
             if (hooks.GetComponent<Rope>().hooked)
             {
+                particlePos = hooks.transform.position;
+                Instantiate(particle2, particlePos, Quaternion.identity);
+
                 if (joint.distance < minimumDistance)
                 {
                     DestroyGrappleHooks();

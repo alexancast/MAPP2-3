@@ -21,6 +21,8 @@ public class Rope : MonoBehaviour {
 	public AudioClip collisionSound;
 	private AudioSource audioSource;
 
+    public ParticleSystem particle;
+
     private void Start()
     {
 		audioSource = GetComponent<AudioSource> ();
