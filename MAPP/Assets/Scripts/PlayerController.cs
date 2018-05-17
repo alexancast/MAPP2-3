@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public Rigidbody2D rigidbody2d;
     public SpringJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
-	public GameObject ropeSprite;
+    public GameObject ropeSprite;
 
     public float jumpHeight;
     public float pullSpeed = 1f;
@@ -20,23 +21,28 @@ public class PlayerController : MonoBehaviour {
 
     public float thrust;
 
-	private AudioSource audioSource;
-	public AudioClip collideSound;
-	public AudioClip missSound;
-	public AudioClip jumpSound;
+    private AudioSource audioSource;
+    public AudioClip collideSound;
+    public AudioClip missSound;
+    public AudioClip jumpSound;
 
     public float countdownTime = 3.0f;
     public bool countdownDone;
 
     public ParticleSystem particle1;
     public ParticleSystem particle2;
+    public ParticleSystem particle3;
     public float fireRate = 0.8F;
     public float nextFire = 0.0F;
+    public float fireRate2 = 0.3F;
+    public float nextFire2 = 0.0F;
     public Vector3 particlePos;
 
-    void Start () {
 
-		audioSource = GetComponent<AudioSource> ();
+    void Start()
+    {
+
+        audioSource = GetComponent<AudioSource>();
 
         // Safetycheck, makes sure a reference to joint exists
         if (joint == null)
@@ -55,8 +61,9 @@ public class PlayerController : MonoBehaviour {
         transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
         StartCoroutine("Countdown");
     }
-	
-	void Update () {
+
+    void Update()
+    {
 
         if (!countdownDone)
         {
@@ -64,7 +71,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         // Throw hook on mouseButtonDown
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
 
             if (Time.time > nextFire)
             {
@@ -72,14 +80,15 @@ public class PlayerController : MonoBehaviour {
                 nextFire = Time.time + fireRate;
             }
 
-            if (!joint.enabled) {
+            if (!joint.enabled)
+            {
 
-				joint.distance = 250;
+                joint.distance = 250;
 
                 DestroyGrappleHooks();
 
-	
-				Instantiate (hook, transform.position, Quaternion.identity);
+
+                Instantiate(hook, transform.position, Quaternion.identity);
 
 
 
@@ -100,14 +109,23 @@ public class PlayerController : MonoBehaviour {
         {
             if (hooks.GetComponent<Rope>().hooked)
             {
-                particlePos = hooks.transform.position;
-                Instantiate(particle2, particlePos, Quaternion.identity);
+
 
                 if (joint.distance < minimumDistance)
                 {
                     DestroyGrappleHooks();
                     DisableJoint();
+
                 }
+
+                if (Vector2.Distance(hooks.transform.position, transform.position) > 0.5f && (Time.time > nextFire2))
+                {
+                    particlePos = hooks.transform.position;
+                    Instantiate(particle3, particlePos, Quaternion.identity);
+                    nextFire2 = Time.time + fireRate2;
+                }
+
+
             }
             else
             {
@@ -115,8 +133,11 @@ public class PlayerController : MonoBehaviour {
                 {
                     DestroyGrappleHooks();
                     DisableJoint();
-					audioSource.PlayOneShot (missSound);
+                    audioSource.PlayOneShot(missSound);
                 }
+
+
+
             }
         }
 
@@ -131,18 +152,23 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void SetDistance()
-	{
+    {
         if (Vector2.Distance(joint.connectedAnchor, transform.position) > kickBackDistance)
         {
             joint.distance = Vector2.Distance(joint.connectedAnchor, transform.position);
 
-        } else
+        }
+        else
         {
             joint.distance = kickBackDistance;
-			audioSource.PlayOneShot (jumpSound, 0.5f);
+            audioSource.PlayOneShot(jumpSound, 0.5f);
+
+            GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");
+            particlePos = hooks.transform.position;
+            Instantiate(particle2, particlePos, Quaternion.identity);
         }
 
-	}
+    }
 
 
     private void DisableJoint()
@@ -157,34 +183,38 @@ public class PlayerController : MonoBehaviour {
 
     private void PullPlayerToHook()
     {
+
         // Reduces joint.distance over time
         // Meant to pull the player towards the hook
         joint.distance -= pullSpeed * Time.deltaTime;
 
     }
 
-	private void DestroyGrappleHooks(){
+    private void DestroyGrappleHooks()
+    {
 
-		GameObject[] oldGrappleHooks;
-		oldGrappleHooks = GameObject.FindGameObjectsWithTag ("GrappleHook");
+        GameObject[] oldGrappleHooks;
+        oldGrappleHooks = GameObject.FindGameObjectsWithTag("GrappleHook");
 
-		GameObject oldLine = GameObject.Find ("Line");
-		Destroy (oldLine);
+        GameObject oldLine = GameObject.Find("Line");
+        Destroy(oldLine);
 
-		foreach (GameObject oldGrappleHook in oldGrappleHooks) {
+        foreach (GameObject oldGrappleHook in oldGrappleHooks)
+        {
 
-			Destroy (oldGrappleHook);
+            Destroy(oldGrappleHook);
 
-		}
+        }
 
-	}
+    }
 
 
-	public void OnCollisionEnter2D(Collision2D other){
-	
-		audioSource.PlayOneShot (collideSound, 1f);
+    public void OnCollisionEnter2D(Collision2D other)
+    {
 
-	}
+        audioSource.PlayOneShot(collideSound, 1f);
+
+    }
 
     IEnumerator Countdown()
     {

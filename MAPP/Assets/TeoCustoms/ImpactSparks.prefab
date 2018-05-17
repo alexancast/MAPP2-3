@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297273311971418}
   m_LocalRotation: {x: 0.7098048, y: -0.019095628, z: -0.6934984, w: -0.12195336}
-  m_LocalPosition: {x: -2.03, y: -1.41, z: -2.234365}
+  m_LocalPosition: {x: -3.5697799, y: -0.01239562, z: -2.234365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -600,7 +600,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0.3, y: 0.3, z: 0.3}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
