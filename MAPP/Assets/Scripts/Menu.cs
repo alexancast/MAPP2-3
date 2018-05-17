@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour {
 
     public GameObject menuPanel;
-    public GameObject settingsPanel;
     public GameObject creditsPanel;
 
 	private AudioSource audioSource;
@@ -77,15 +76,6 @@ public class Menu : MonoBehaviour {
         menuIsOpen = true;
     }
 
-    public void OpenSettings()
-    {
-        ClosePanels();
-        audioSource.PlayOneShot(clickSound, 1f);
-        settingsPanel.SetActive(true);
-        settingsIsOpen = true;
-
-    }
-
     public void OpenCredits()
     {
         ClosePanels();
@@ -97,7 +87,6 @@ public class Menu : MonoBehaviour {
     private void ClosePanels()
     {
         menuPanel.SetActive(false);
-        settingsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         menuIsOpen = false;
         settingsIsOpen = false;
