@@ -5,18 +5,18 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour {
 
     public GameObject circle;
-    public GameObject arrow;
+    public GameObject innerCircle;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         circle.SetActive(true);
-        arrow.SetActive(true);
+        innerCircle.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         circle.SetActive(false);
-        arrow.SetActive(false);
+        innerCircle.SetActive(false);
     }
 
 }
