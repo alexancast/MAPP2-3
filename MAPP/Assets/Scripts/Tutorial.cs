@@ -7,6 +7,12 @@ public class Tutorial : MonoBehaviour {
     public GameObject circle;
     public GameObject innerCircle;
 
+    private void Start()
+    {
+        circle.SetActive(false);
+        innerCircle.SetActive(false);
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         circle.SetActive(true);
