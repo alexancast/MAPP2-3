@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
             if (Time.time > nextFire)
             {
-                particle1.Play();
+                //particle1.Play();
                 nextFire = Time.time + fireRate;
             }
 
@@ -113,13 +113,10 @@ public class PlayerController : MonoBehaviour
         {
             if (hooks.GetComponent<Rope>().hooked)
             {
-
-
                 if (joint.distance < minimumDistance)
                 {
                     DestroyGrappleHooks();
                     DisableJoint();
-
                 }
 
                 if (Vector2.Distance(hooks.transform.position, transform.position) > 0.5f && (Time.time > nextFire2))
@@ -146,8 +143,6 @@ public class PlayerController : MonoBehaviour
         }
 
         PullPlayerToHook();
-
-
     }
 
     void FixedUpdate()
@@ -194,7 +189,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void DestroyGrappleHooks()
+    public void DestroyGrappleHooks()
     {
 
         GameObject[] oldGrappleHooks;
@@ -211,7 +206,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
 
     public void OnCollisionEnter2D(Collision2D other)
     {

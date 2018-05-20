@@ -65,8 +65,6 @@ public class Rope : MonoBehaviour {
         Vector3 g = GameObject.FindGameObjectWithTag("GrappleHook").transform.position;
         lr.SetPosition(0, new Vector3(p.x, p.y, p.z - 1));
 		lr.SetPosition(1, new Vector3(g.x, g.y, g.z - 1));
-        Debug.Log(lr.GetPosition(0));
-        Debug.Log(lr.GetPosition(1));
 
         lr.material.mainTextureScale = new Vector2 (distance,1);
 
@@ -80,9 +78,9 @@ public class Rope : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
 	{
-        if (collision.CompareTag("Terrain")){
+        if (other.gameObject.CompareTag("Terrain")){
 
 			audioSource.PlayOneShot (collisionSound, 1f);
 
@@ -97,6 +95,11 @@ public class Rope : MonoBehaviour {
 
 			player.GetComponent<PlayerController> ().SetDistance ();
 
+        } else if (other.gameObject.CompareTag("AntiHook"))
+        {
+            audioSource.PlayOneShot(collisionSound, 1f);
+
+            player.GetComponent<PlayerController>().DestroyGrappleHooks();
         }
 	}
 

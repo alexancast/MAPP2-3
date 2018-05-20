@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a042e512b6a2c4b4f8a9fa2c0d341c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repMaterial: {fileID: 2100000, guid: 74da3b404c2d1c348b6d76048a4376b2, type: 2}
+  repMaterial: {fileID: 2100000, guid: d34f15ac103d4aa48bb01531bf6f1d76, type: 2}
   speed: 1500
   hooked: 0
   lineWidth: 0.2
