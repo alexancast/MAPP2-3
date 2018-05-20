@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour {
 
+    public GameObject fade;
     private Text text;
 
     private void Start()
@@ -16,12 +17,13 @@ public class Countdown : MonoBehaviour {
     IEnumerator CountdownNumber()
     {
         text.text = "3";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         text.text = "2";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         text.text = "1";
 
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        Destroy(fade);
     }
 }
