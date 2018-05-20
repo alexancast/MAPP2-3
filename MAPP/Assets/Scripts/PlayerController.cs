@@ -73,6 +73,10 @@ public class PlayerController : MonoBehaviour
         // Throw hook on mouseButtonDown
         if (Input.GetMouseButtonDown(0))
         {
+            if(!countdownDone)
+            {
+                return;
+            }
 
             if (Time.time > nextFire)
             {
@@ -218,7 +222,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(countdownTime);
+        yield return new WaitForSeconds(countdownTime +0.1f);
         countdownDone = true;
         rigidbody2d.velocity = new Vector2(PlayerPrefs.GetFloat("xVel"), PlayerPrefs.GetFloat("yVel"));
     }
