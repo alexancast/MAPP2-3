@@ -6,19 +6,23 @@ public class Rope : MonoBehaviour {
 
 	public Material repMaterial;
 
-    public Vector2 target;
+    private Vector2 target = new Vector2(0,0);
     public float speed = 1;
 
     private Rigidbody2D rb;
 
     private Vector3 sp;
 
-    public GameObject player;
+    private GameObject player;
 
     public bool hooked;
     private float reelInSpeed = 5;
 
-	public AudioClip collisionSound;
+    public float lineWidth = 0.2f;
+
+    private float angle;
+
+    public AudioClip collisionSound;
 	private AudioSource audioSource;
 
     private void Start()
@@ -48,23 +52,32 @@ public class Rope : MonoBehaviour {
 		var go = new GameObject ("Line");
 		var lr = go.AddComponent<LineRenderer> ();
 
+        lr.sortingLayerName = "Line";
 
-
-		lr.startWidth = 0.3f;
-		lr.endWidth = 0.3f;
+		lr.startWidth = lineWidth;
+		lr.endWidth = lineWidth;
 
 
 		lr.material = repMaterial;
 
+        go.transform.position = new Vector3(0,0,-1);
+        Vector3 p = player.transform.position;
+        Vector3 g = GameObject.FindGameObjectWithTag("GrappleHook").transform.position;
+        lr.SetPosition(0, new Vector3(p.x, p.y, p.z - 1));
+		lr.SetPosition(1, new Vector3(g.x, g.y, g.z - 1));
+        Debug.Log(lr.GetPosition(0));
+        Debug.Log(lr.GetPosition(1));
 
-	
-		lr.SetPosition (0, player.transform.position);
-		lr.SetPosition (1, GameObject.FindGameObjectWithTag ("GrappleHook").transform.position);
-
-
-		lr.material.mainTextureScale = new Vector2 (distance,1);
+        lr.material.mainTextureScale = new Vector2 (distance,1);
 
         player.GetComponent<PlayerController>().joint.connectedAnchor = new Vector2(transform.position.x, transform.position.y);
+
+        Vector2 v = rb.velocity;
+        angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        if (v.x != 0 && v.y != 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2191,8 +2191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 22397343
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bde6987465dfa154e992ed9d5508cdcc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4201,7 +4201,7 @@ MonoBehaviour:
   pullSpeed: 20
   kickBackDistance: 5
   minimumDistance: 0.1
-  maximumDistance: 10
+  maximumDistance: 1000
   thrust: 1
   collideSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
   missSound: {fileID: 8300000, guid: 1418c6f9e24cfd144b23248c4fb70fc2, type: 3}
