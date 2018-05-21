@@ -25,24 +25,4 @@ public class ChangeIcon : MonoBehaviour {
         }
         
     }
-
-
-
-	public void Mute(){
-
-		if (PlayerPrefs.GetInt ("mute") == 1) {
-
-			PlayerPrefs.SetInt ("mute", -1);
-			Debug.Log ("Mute");
-
-		} else{
-			PlayerPrefs.SetInt ("mute", 1);
-			Debug.Log("UnMute");
-		}
-
-
-	}
-
-
-
 }
