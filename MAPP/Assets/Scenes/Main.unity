@@ -202,8 +202,8 @@ TargetJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_Anchor: {x: 0.20845275, y: 0.16025864}
-  m_Target: {x: 0.052148163, y: 0.5302382}
+  m_Anchor: {x: -0.02, y: 1.5}
+  m_Target: {x: 0, y: 0.67}
   m_AutoConfigureTarget: 0
   m_MaxForce: 10000
   m_DampingRatio: 1
@@ -221,13 +221,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5000
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &11195321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  anchorOffset: {x: 0, y: 0}
+  anchorOffset: {x: 0.2, y: -0.6}
 --- !u!1 &100025017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2531,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 22397343
   m_SortingLayer: 5
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 8808cc14411b304438712c6371de8356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2719,7 +2719,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 539086878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.315, y: -0.692, z: 0}
+  m_LocalPosition: {x: -0.31500003, y: -0.692, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.099999994}
   m_Children:
   - {fileID: 743876544}
@@ -2800,9 +2800,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 300
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -3547,8 +3547,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782583646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.581, y: 0.469, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.099999994}
+  m_LocalPosition: {x: 0.675, y: 0.552, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.2}
   m_Children:
   - {fileID: 2125913347}
   m_Father: {fileID: 1120455661}
@@ -3589,12 +3589,12 @@ SpriteRenderer:
   m_SortingLayerID: 22397343
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c026bb2c9ff37a44a913ab3897760dca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c17bfd92027e0d54597dca1eb686d33c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12, y: 15}
+  m_Size: {x: 3.72, y: 2.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3611,8 +3611,8 @@ TargetJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_Anchor: {x: -0.7, y: -0.04}
-  m_Target: {x: 0.6, y: 0.469}
+  m_Anchor: {x: -1.25, y: -0.23}
+  m_Target: {x: 0.35, y: 0.5}
   m_AutoConfigureTarget: 0
   m_MaxForce: 10000
   m_DampingRatio: 1
@@ -3628,9 +3628,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 300
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -3649,7 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  anchorOffset: {x: -0.24, y: -0.43}
+  anchorOffset: {x: -0.1, y: -0.43}
 --- !u!1 &796767244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3676,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 796767244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.629, z: 0}
+  m_LocalPosition: {x: 0.3, y: -0.62900007, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.099999994}
   m_Children:
   - {fileID: 1461258546}
@@ -3757,9 +3757,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 300
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  anchorOffset: {x: -0.2, y: 0.45}
+  anchorOffset: {x: -0.1, y: 0.45}
 --- !u!1 &805019313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,8 +5679,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1329718545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.358, y: 0.077, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.099999994}
+  m_LocalPosition: {x: -0.415, y: -0.058, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.099999994}
   m_Children:
   - {fileID: 372849554}
   m_Father: {fileID: 1120455661}
@@ -5720,13 +5720,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 22397343
   m_SortingLayer: 5
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ac91322e535593e468cf8222c18ecc75, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 9f33ac7dc201d7c41a05a376f4ff198d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12, y: 15}
+  m_Size: {x: 2.69, y: 4.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5743,8 +5743,8 @@ TargetJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_Anchor: {x: 0.38, y: 0.74}
-  m_Target: {x: -0.358, y: 0.077}
+  m_Anchor: {x: 0.5, y: 1.42}
+  m_Target: {x: -0.29, y: 0.29}
   m_AutoConfigureTarget: 0
   m_MaxForce: 10000
   m_DampingRatio: 1
@@ -5760,9 +5760,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 300
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5781,7 +5781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  anchorOffset: {x: 0.29, y: -0.36}
+  anchorOffset: {x: 0.4, y: -0.36}
 --- !u!1 &1374625080
 GameObject:
   m_ObjectHideFlags: 0
