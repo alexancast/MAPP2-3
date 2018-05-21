@@ -27,7 +27,12 @@ public class Rope : MonoBehaviour {
 
     private void Start()
     {
+
+
 		audioSource = GetComponent<AudioSource> ();
+
+		if (PlayerPrefs.GetInt ("mutefx") == -1)
+			audioSource.mute = true;
 
         player = GameObject.FindGameObjectWithTag("Player");
 

@@ -22,7 +22,7 @@ public class LimbWobble : MonoBehaviour {
     void Update () {
         //transform.position = new Vector3(pos.x - offset.x, pos.y - offset.y, pos.z);
         pos = player.transform.position;
-        Debug.Log(pos);
+      //  Debug.Log(pos);
         joint.target = new Vector2(pos.x, pos.y) - anchorOffset;
 	}
 }
