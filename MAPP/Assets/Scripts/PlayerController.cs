@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public SpringJoint2D joint;
     public Vector2 playerpos;
     public GameObject hook;
-    public GameObject ropeSprite;
 
     public float jumpHeight;
     public float pullSpeed = 1f;

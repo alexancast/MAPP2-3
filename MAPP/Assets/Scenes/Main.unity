@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6791894}
   m_Layer: 0
   m_Name: staircase3
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 52896231}
   m_Layer: 0
   m_Name: tsl8house
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 61479097}
   m_Layer: 0
   m_Name: pillar3
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3449,7 +3449,7 @@ GameObject:
   - component: {fileID: 421268531}
   m_Layer: 0
   m_Name: electronic2
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3524,7 +3524,7 @@ GameObject:
   - component: {fileID: 430780019}
   m_Layer: 0
   m_Name: gomtowerblur
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4076,7 +4076,7 @@ GameObject:
   - component: {fileID: 468603691}
   m_Layer: 0
   m_Name: staircase1 pow!
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 655946459}
   m_Layer: 0
   m_Name: road1
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5172,7 +5172,7 @@ GameObject:
   - component: {fileID: 684958098}
   m_Layer: 0
   m_Name: road2
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5394,7 +5394,7 @@ GameObject:
   - component: {fileID: 712101096}
   m_Layer: 0
   m_Name: pillar (1)
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5568,7 +5568,7 @@ GameObject:
   - component: {fileID: 718173613}
   m_Layer: 0
   m_Name: camera
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5845,7 +5845,7 @@ GameObject:
   - component: {fileID: 745992613}
   m_Layer: 0
   m_Name: floorplatform1
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6679,7 +6679,7 @@ GameObject:
   - component: {fileID: 902728434}
   m_Layer: 0
   m_Name: staircase2 icecreamhouse
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7851,7 +7851,6 @@ MonoBehaviour:
   joint: {fileID: 1120455665}
   playerpos: {x: 0, y: 0}
   hook: {fileID: 1708392247244528, guid: dab33077832f74a6fb51ba23266fb287, type: 2}
-  ropeSprite: {fileID: 0}
   jumpHeight: 500
   pullSpeed: 20
   kickBackDistance: 5
@@ -8258,7 +8257,7 @@ GameObject:
   - component: {fileID: 1163477930}
   m_Layer: 0
   m_Name: pillar4
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8332,7 +8331,7 @@ GameObject:
   - component: {fileID: 1202239217}
   m_Layer: 0
   m_Name: pillar5
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10250,7 +10249,7 @@ GameObject:
   - component: {fileID: 1613354226}
   m_Layer: 0
   m_Name: gridplatform
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10867,7 +10866,7 @@ GameObject:
   - component: {fileID: 1782136979}
   m_Layer: 0
   m_Name: stonecreature
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10942,7 +10941,7 @@ GameObject:
   - component: {fileID: 1799368354}
   m_Layer: 0
   m_Name: pillar
-  m_TagString: AntiHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12082,7 +12081,7 @@ GameObject:
   - component: {fileID: 1967958701}
   m_Layer: 0
   m_Name: floorplatform2
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12576,7 +12575,7 @@ GameObject:
   - component: {fileID: 2045951975}
   m_Layer: 0
   m_Name: electronic1
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12650,7 +12649,7 @@ GameObject:
   - component: {fileID: 2076826305}
   m_Layer: 0
   m_Name: pillar2
-  m_TagString: GrappleHook
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
