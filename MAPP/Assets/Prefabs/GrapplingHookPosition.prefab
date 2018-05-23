@@ -190,6 +190,8 @@ MonoBehaviour:
   hooked: 0
   lineWidth: 0.2
   collisionSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
+  collisionSound_stoneHit: {fileID: 8300000, guid: cf4b7dd63fcbc864cbd111be4be9a47e,
+    type: 3}
 --- !u!212 &212508296333775372
 SpriteRenderer:
   m_ObjectHideFlags: 1

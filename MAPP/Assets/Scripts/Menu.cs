@@ -9,9 +9,13 @@ public class Menu : MonoBehaviour {
     public GameObject creditsPanel;
 
 	private AudioSource audioSource;
-	public AudioClip clickSound;
+    public AudioClip clickSound;
 
-	public float timer = 0.2f;
+    public AudioClip clickSound_Start;
+    public AudioClip clickSound_Credits;
+    public AudioClip clickSound_Reset;
+
+    public float timer = 0.2f;
 	private bool timerActive = false;
 	private bool startGame;
 
@@ -58,7 +62,7 @@ public class Menu : MonoBehaviour {
     public void StartGame()
     {
 		timerActive = true;
-		audioSource.PlayOneShot (clickSound, 1f);
+		audioSource.PlayOneShot (clickSound_Start, 1f);
 		startGame = true;
        
     }
@@ -71,7 +75,7 @@ public class Menu : MonoBehaviour {
     public void OpenMenu()
     {
         ClosePanels();
-        audioSource.PlayOneShot(clickSound, 1f);
+        audioSource.PlayOneShot(clickSound_Credits, 1f);
         menuPanel.SetActive(true);
         menuIsOpen = true;
     }
@@ -79,7 +83,7 @@ public class Menu : MonoBehaviour {
     public void OpenCredits()
     {
         ClosePanels();
-        audioSource.PlayOneShot(clickSound, 1f);
+        audioSource.PlayOneShot(clickSound_Reset, 1f);
         creditsPanel.SetActive(true);
         creditsIsOpen = true;
     }
@@ -95,7 +99,7 @@ public class Menu : MonoBehaviour {
 
     public void ClickSound()
     {
-        audioSource.PlayOneShot(clickSound, 1f);
+        audioSource.PlayOneShot(clickSound_Reset, 1f);
     }
 
 

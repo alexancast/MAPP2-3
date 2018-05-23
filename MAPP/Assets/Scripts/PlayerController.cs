@@ -159,7 +159,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             joint.distance = kickBackDistance;
-            audioSource.PlayOneShot(jumpSound, 0.5f);
+            audioSource.pitch = Random.Range(0.6f, 1.6f);
+            audioSource.PlayOneShot(jumpSound, 0.8f);
 
             GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");
             particlePos = hooks.transform.position;
@@ -208,7 +209,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-
+        audioSource.pitch = Random.Range(0.6f, 1f);
         audioSource.PlayOneShot(collideSound, 1f);
 
     }

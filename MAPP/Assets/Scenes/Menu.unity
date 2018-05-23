@@ -404,6 +404,9 @@ MonoBehaviour:
   menuPanel: {fileID: 550834858}
   creditsPanel: {fileID: 430560092}
   clickSound: {fileID: 8300000, guid: 102de6616a9894f5d8a04e7227070dd6, type: 3}
+  clickSound_Start: {fileID: 8300000, guid: 3ef52a48fa99bc74c94e14de73ef3f85, type: 3}
+  clickSound_Credits: {fileID: 8300000, guid: b8f821d621855164b839fc59308d7cb3, type: 3}
+  clickSound_Reset: {fileID: 8300000, guid: 4736153c4bfcd23488a742ebd7656b64, type: 3}
   timer: 0.2
 --- !u!114 &199073363
 MonoBehaviour:
