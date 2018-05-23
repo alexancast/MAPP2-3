@@ -48,11 +48,11 @@ TagManager:
   - name: Background
     uniqueID: 2522298685
     locked: 0
-  - name: Line
-    uniqueID: 2221852075
-    locked: 0
   - name: Environment
     uniqueID: 229474583
+    locked: 0
+  - name: Line
+    uniqueID: 2221852075
     locked: 0
   - name: GrapplingHook
     uniqueID: 1279314959
