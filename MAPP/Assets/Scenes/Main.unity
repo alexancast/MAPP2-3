@@ -9092,6 +9092,8 @@ MonoBehaviour:
   collideSound: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
   missSound: {fileID: 8300000, guid: 1418c6f9e24cfd144b23248c4fb70fc2, type: 3}
   jumpSound: {fileID: 8300000, guid: b973415892614824e811722075c35819, type: 3}
+  hookCollideHard: {fileID: 8300000, guid: cf4b7dd63fcbc864cbd111be4be9a47e, type: 3}
+  hookCollideSoft: {fileID: 8300000, guid: ca94411fbb56c30468965875888134e9, type: 3}
   countdownTime: 3
   countdownDone: 0
   particle1: {fileID: 198061682550499304, guid: b3419e2717c1c9d4693e935d1e144818,

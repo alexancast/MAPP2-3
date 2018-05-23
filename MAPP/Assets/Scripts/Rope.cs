@@ -88,17 +88,7 @@ public class Rope : MonoBehaviour {
 	{
         if (other.gameObject.CompareTag("Terrain")){
 
-            float rnd = Random.Range(0f, 1f);
-
-            if (rnd > 0.5f)
-            {
-                audioSource.PlayOneShot(collisionSound, 1f);
-            }
-            else {
-                audioSource.pitch = 1.3f;
-                audioSource.PlayOneShot(collisionSound_stoneHit, 0.6f);
-            }
-			    
+            player.GetComponent<PlayerController>().playHookCollide("Terrain");
 
             player.GetComponent<PlayerController>().EnableJoint();
 
@@ -113,7 +103,8 @@ public class Rope : MonoBehaviour {
 
         } else if (other.gameObject.CompareTag("AntiHook"))
         {
-            audioSource.PlayOneShot(collisionSound, 1f);
+            //audioSource.PlayOneShot(collisionSound, 1f);
+            player.GetComponent<PlayerController>().playHookCollide("AntiHook");
 
             player.GetComponent<PlayerController>().DestroyGrappleHooks();
         }

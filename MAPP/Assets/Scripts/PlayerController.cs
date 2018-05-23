@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip collideSound;
     public AudioClip missSound;
     public AudioClip jumpSound;
+    public AudioClip hookCollideHard;
+    public AudioClip hookCollideSoft;
 
     public float countdownTime = 3.0f;
     public bool countdownDone;
@@ -159,7 +161,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             joint.distance = kickBackDistance;
-            audioSource.pitch = Random.Range(0.6f, 1.6f);
+            audioSource.pitch = Random.Range(0.8f, 1.7f);
             audioSource.PlayOneShot(jumpSound, 0.8f);
 
             GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");
@@ -212,6 +214,19 @@ public class PlayerController : MonoBehaviour
         audioSource.pitch = Random.Range(0.6f, 1f);
         audioSource.PlayOneShot(collideSound, 1f);
 
+    }
+
+    public void playHookCollide(string material) {
+        
+        if (material == "Terrain")
+        {
+            audioSource.PlayOneShot(hookCollideSoft, 1f);
+        }
+        else if(material == "AntiHook")
+        {
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            audioSource.PlayOneShot(hookCollideHard, 0.6f);
+        }
     }
 
     IEnumerator Countdown()
