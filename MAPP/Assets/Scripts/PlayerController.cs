@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
         if (!countdownDone)
         {
             transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
+            rigidbody2d.velocity = Vector3.zero;
+            return;
         }
 
         // Throw hook on mouseButtonDown
