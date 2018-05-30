@@ -11,5 +11,6 @@ public class ResetProgress : MonoBehaviour {
         PlayerPrefs.SetInt("HighScore", 0);
         PlayerPrefs.SetFloat("xPos", pos.x);
         PlayerPrefs.SetFloat("yPos", pos.y);
+
     }
 }

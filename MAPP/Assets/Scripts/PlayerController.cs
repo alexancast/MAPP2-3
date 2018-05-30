@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             joint.distance = kickBackDistance;
-            audioSource.pitch = Random.Range(0.8f, 1.7f);
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
             audioSource.PlayOneShot(jumpSound, 0.8f);
 
             GameObject hooks = GameObject.FindGameObjectWithTag("GrappleHook");

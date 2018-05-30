@@ -22,8 +22,8 @@ public class Rope : MonoBehaviour {
 
     private float angle;
 
-    public AudioClip collisionSound;
-    public AudioClip collisionSound_stoneHit; 
+    //public AudioClip collisionSound;
+    //public AudioClip collisionSound_stoneHit; 
     private AudioSource audioSource;
 
     private void Start()
