@@ -60,8 +60,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mapp Grupp 2, Project "Drawing a blank" Pre-Alpha Quality-Assurance Prototype
-    v1.9.1
+  m_Text: Grapple Up - Alpha v1.0.103
 --- !u!222 &222352125302267236
 CanvasRenderer:
   m_ObjectHideFlags: 1
